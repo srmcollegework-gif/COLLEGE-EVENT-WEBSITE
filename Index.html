@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SRM TRP College Events</title>
+
+<style>
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background: #f5f7ff;
+
+  color: #172033;
+
+}
+
+/* Navigation Bar */
+
+header {
+
+  background: #111827;
+
+  color: white;
+
+  padding: 18px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.logo {
+
+  color: #a5a0ff;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+}
+
+nav a {
+
+  color: white;
+
+  text-decoration: none;
+
+  margin: 10px;
+
+}
+
+nav a:hover {
+
+  color: #a5a0ff;
+
+}
+
+/* Home Section */
+
+.hero {
+
+  min-height: 520px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 60px 8%;
+
+  color: white;
+
+  background:
+
+  linear-gradient(90deg,#111827dd,#635bff88),
+
+  url("https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400")
+
+  center/cover;
+
+}
+
+.hero h1 {
+
+  font-size: 48px;
+
+  margin-bottom: 20px;
+
+}
+
+.hero p {
+
+  font-size: 18px;
+
+  margin-bottom: 25px;
+
+}
+
+.btn {
+
+  background: #635bff;
+
+  color: white;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+}
+
+/* Common Sections */
+
+section {
+
+  padding: 65px 8%;
+
+}
+
+.heading {
+
+  text-align: center;
+
+  margin-bottom: 35px;
+
+}
+
+.heading h2 {
+
+  font-size: 32px;
+
+  color: #29246e;
+
+}
+
+/* About */
+
+.about {
+
+  text-align: center;
+
+  background: white;
+
+  line-height: 1.8;
+
+}
+
+/* Events */
+
+.events {
+
+  background: #f5f7ff;
+
+}
+
+.event-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 25px;
+
+}
+
+.card {
+
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px #0001;
+
+}
+
+.card img {
+
+  width: 100%;
+
+  height: 190px;
+
+  object-fit: cover;
+
+}
+
+.card-content {
+
+  padding: 20px;
+
+}
+
+.card-content h3 {
+
+  margin: 10px 0;
+
+  color: #635bff;
+
+}
+
+.card-content p {
+
+  margin-bottom: 15px;
+
+  color: #555;
+
+}
+
+/* Registration */
+
+.registration {
+
+  background: white;
+
+}
+
+form {
+
+  max-width: 550px;
+
+  margin: auto;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px #0001;
+
+  border-radius: 12px;
+
+}
+
+input, select {
+
+  width: 100%;
+
+  padding: 13px;
+
+  margin: 10px 0 18px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 6px;
+
+}
+
+label {
+
+  font-weight: bold;
+
+}
+
+form button {
+
+  width: 100%;
+
+}
+
+#message {
+
+  text-align: center;
+
+  color: green;
+
+  margin-top: 15px;
+
+}
+
+/* Gallery */
+
+.gallery {
+
+  background: #f5f7ff;
+
+  text-align: center;
+
+}
+
+/* Contact */
+
+.contact {
+
+  background: #e9eaff;
+
+  text-align: center;
+
+  line-height: 2;
+
+}
+
+/* Footer */
+
+footer {
+
+  background: #111827;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 25px;
+
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px) {
+
+  header {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+  }
+
+  nav {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  }
+
+  nav a {
+
+    margin: 5px;
+
+    font-size: 13px;
+
+  }
+
+  .hero h1 {
+
+    font-size: 34px;
+
+  }
+
+  .event-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  section {
+
+    padding: 45px 6%;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<header>
+
+  <div class="logo">SRM TRP EVENTS</div>
+
+  <nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#events">Events</a>
+
+    <a href="#gallery">Gallery</a>
+
+    <a href="#register">Register</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+</header>
+
+<div class="hero" id="home">
+
+  <div>
+
+    <h1>Welcome to SRM TRP<br>College Events 2026</h1>
+
+    <p>Discover Events. Share Ideas. Create Memories.</p>
+
+    <a href="#events" class="btn">Explore Events</a>
+
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="heading">
+
+    <h2>About Our College Events</h2>
+
+  </div>
+
+  <p>
+
+    SRM TRP Engineering College provides students
+
+    with opportunities to showcase their talents,
+
+    develop technical skills and participate in
+
+    cultural and educational activities.
+
+  </p>
+
+</section>
+
+<!-- EVENTS -->
+
+<section class="events" id="events">
+
+  <div class="heading">
+
+    <h2>Upcoming Events</h2>
+
+    <p>Explore our exciting college activities</p>
+
+  </div>
+
+  <div class="event-grid">
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700">
+
+      <div class="card-content">
+
+        <h3>Technical Symposium</h3>
+
+        <p>Showcase your technical knowledge and skills.</p>
+
+        <p>📅 10 December 2026</p>
+
+        <button class="btn" onclick="selectEvent('Technical Symposium')">Register</button>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=700">
+
+      <div class="card-content">
+
+        <h3>Cultural Fest</h3>
+
+        <p>Enjoy music, dance and cultural performances.</p>
+
+        <p>📅 15 December 2026</p>
+
+        <button class="btn" onclick="selectEvent('Cultural Fest')">Register</button>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=700">
+
+      <div class="card-content">
+
+        <h3>Innovation Workshop</h3>
+
+        <p>Learn new technologies and creative ideas.</p>
+
+        <p>📅 20 December 2026</p>
+
+        <button class="btn" onclick="selectEvent('Innovation Workshop')">Register</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+  <div class="heading">
+
+    <h2>Event Gallery</h2>
+
+  </div>
+
+  <p>Memories, celebrations and student activities.</p>
+
+  <img
+
+  src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800"
+
+  alt="College event gallery"
+
+  style="width:100%;max-width:650px;margin-top:25px;border-radius:12px;">
+
+</section>
+
+<!-- REGISTRATION -->
+
+<section class="registration" id="register">
+
+  <div class="heading">
+
+    <h2>Student Registration</h2>
+
+    <p>Register for your favourite event</p>
+
+  </div>
+
+  <form id="eventForm">
+
+    <label>Student Name</label>
+
+    <input type="text" placeholder="Enter your name" required>
+
+    <label>Register Number</label>
+
+    <input type="text" placeholder="Enter register number" required>
+
+    <label>Email Address</label>
+
+    <input type="email" placeholder="Enter email" required>
+
+    <label>Department</label>
+
+    <select required>
+
+      <option value="">Select Department</option>
+
+      <option>BE CSE (AI & ML)</option>
+
+      <option>Computer Science</option>
+
+      <option>Information Technology</option>
+
+      <option>Mechanical Engineering</option>
+
+      <option>Other</option>
+
+    </select>
+
+    <label>Select Event</label>
+
+    <select id="eventChoice" required>
+
+      <option value="">Choose Event</option>
+
+      <option>Technical Symposium</option>
+
+      <option>Cultural Fest</option>
+
+      <option>Innovation Workshop</option>
+
+    </select>
+
+    <button class="btn" type="submit">Submit Registration</button>
+
+    <p id="message"></p>
+
+  </form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="heading">
+
+    <h2>Contact Us</h2>
+
+  </div>
+
+  <p>SRM TRP Engineering College</p>
+
+  <p>College Event Management Team</p>
+
+  <p>Email: events@example.com</p>
+
+</section>
+
+<footer>
+
+  <p>© 2026 SRM TRP College Events</p>
+
+  <p>Designed for Students</p>
+
+</footer>
+
+<script>
+
+function selectEvent(name) {
+
+  document.getElementById("eventChoice").value = name;
+
+  document.getElementById("register").scrollIntoView({
+
+    behavior: "smooth"
+
+  });
+
+}
+
+document.getElementById("eventForm")
+
+.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  document.getElementById("message").innerText =
+
+  "Registration submitted successfully!";
+
+  this.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>
